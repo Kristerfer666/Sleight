@@ -1,9 +1,9 @@
-import { Geist, Geist_Mono } from "next/font/google";
+import { Crimson_Pro, Geist_Mono } from "next/font/google";
 import Link from "next/link";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const crimsonPro = Crimson_Pro({
+  variable: "--font-crimson-pro",
   subsets: ["latin"],
 });
 
@@ -21,33 +21,33 @@ export default function RootLayout({ children }) {
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${crimsonPro.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
-        <header className="bg-zinc-950 text-zinc-100 border-b border-zinc-800">
+        <header className="bg-background text-foreground border-b border-line">
           <nav className="flex items-center h-12 px-6">
-            <Link href="/" className="text-lg font-bold tracking-tight">
+            <Link href="/" className="text-2xl font-bold tracking-tight">
               Sleight
             </Link>
-            <div className="flex items-center gap-4 ml-10 text-sm font-light text-zinc-400">
-              <Link href="/" className="hover:text-zinc-100 transition-colors">
+            <div className="flex items-center gap-4 ml-10 text-lg font-light text-muted">
+              <Link href="/" className="hover:text-foreground transition-colors">
                 Home
               </Link>
               <Link
                 href="/sleights"
-                className="hover:text-zinc-100 transition-colors"
+                className="hover:text-foreground transition-colors"
               >
                 Sleights
               </Link>
               <Link
                 href="/notes"
-                className="hover:text-zinc-100 transition-colors"
+                className="hover:text-foreground transition-colors"
               >
                 Notes
               </Link>
               <Link
                 href="/settings"
-                className="hover:text-zinc-100 transition-colors"
+                className="hover:text-foreground transition-colors"
               >
                 Settings
               </Link>
