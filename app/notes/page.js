@@ -14,8 +14,7 @@ export default function Notes() {
           sidebarOpen ? "translate-x-0" : "-translate-x-[calc(100%+16px)]"
         }`}
       >
-        <div className="h-full overflow-y-auto rounded-2xl [scrollbar-width:thin] [scrollbar-color:#b9a982_transparent]">
-          <div className="h-12 shrink-0" />
+        <div className="h-full soft-scroll overflow-y-auto rounded-2xl">
           {Array.from({ length: 10 }, (_, i) => i + 1).map((n) => (
             <button
               key={n}
@@ -23,10 +22,10 @@ export default function Notes() {
               aria-label={`Note ${n}`}
               aria-pressed={selectedNote === n}
               onClick={() => setSelectedNote(n)}
-              className={`mx-2 mb-2 block h-1/5 w-[calc(100%-16px)] shrink-0 rounded-xl border shadow-[2px_3px_6px_rgba(58,42,28,0.15)] transition-colors ${
+              className={`mx-2 mb-2 first:mt-2 block h-1/5 w-[calc(100%-16px)] shrink-0 rounded-xl border transition-[background-color,box-shadow] ${
                 selectedNote === n
-                  ? "border-muted bg-white/90"
-                  : "border-line bg-white/40 hover:bg-white/60"
+                  ? "border-transparent bg-[#d3c6a4] shadow-[inset_3px_4px_10px_rgba(58,42,28,0.3),inset_0_3px_6px_rgba(58,42,28,0.1),inset_3px_0_6px_rgba(58,42,28,0.1),1px_1px_0_rgba(255,255,255,0.7)]"
+                  : "border-line bg-white/40 shadow-[2px_3px_6px_rgba(58,42,28,0.15)] hover:bg-white/75"
               }`}
             />
           ))}
@@ -44,7 +43,7 @@ export default function Notes() {
         onClick={() => setSidebarOpen((open) => !open)}
         aria-label={sidebarOpen ? "Close sidebar" : "Open sidebar"}
         aria-expanded={sidebarOpen}
-        className="absolute top-6 left-6 z-10 flex h-8 w-8 items-center justify-center rounded-lg border border-line bg-white/40 text-muted transition-colors hover:bg-white/70 hover:text-foreground"
+        className="absolute top-6 left-6 z-10 flex h-8 w-8 items-center justify-center rounded-xl border border-line bg-white/40 text-muted transition-colors hover:bg-white/70 hover:text-foreground"
       >
         <svg
           width="18"
