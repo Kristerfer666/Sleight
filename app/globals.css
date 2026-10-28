@@ -21,31 +21,3 @@ body {
   color: var(--foreground);
   font-family: var(--font-crimson-pro), Georgia, serif;
 }
-
-.soft-scroll {
-  scrollbar-width: thin;
-  scrollbar-color: #b9a982 transparent;
-}
-
-@supports selector(::-webkit-scrollbar) {
-  .soft-scroll {
-    scrollbar-width: auto;
-    scrollbar-color: auto;
-  }
-
-  .soft-scroll::-webkit-scrollbar {
-    width: 10px;
-  }
-
-  .soft-scroll::-webkit-scrollbar-track {
-    background: transparent;
-    margin-block: 14px;
-  }
-
-  .soft-scroll::-webkit-scrollbar-thumb {
-    background: #b9a982;
-    border: 2px solid transparent;
-    border-radius: 999px;
-    background-clip: padding-box;
-  }
-}

@@ -14,7 +14,7 @@ export default function Notes() {
           sidebarOpen ? "translate-x-0" : "-translate-x-[calc(100%+16px)]"
         }`}
       >
-        <div className="h-full soft-scroll overflow-y-auto rounded-2xl">
+        <div className="h-full overflow-y-auto rounded-2xl [scrollbar-width:thin] [scrollbar-color:#b9a982_transparent]">
           {Array.from({ length: 10 }, (_, i) => i + 1).map((n) => (
             <button
               key={n}

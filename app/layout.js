@@ -24,7 +24,7 @@ export default function RootLayout({ children }) {
       className={`${crimsonPro.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
-        <header className="bg-background text-foreground border-b border-line">
+        <header className="relative z-20 bg-background text-foreground border-b border-line shadow-[1px_3px_8px_rgba(58,42,28,0.18)]">
           <nav className="flex items-center h-12 px-6">
             <Link href="/" className="text-2xl font-bold tracking-tight">
               Sleight
