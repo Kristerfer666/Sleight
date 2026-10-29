@@ -24,7 +24,7 @@ export default function Sleights() {
               key={n}
               type="button"
               aria-label={`Sleight ${n}`}
-              className="rounded-2xl border border-line bg-white/60 shadow-[2px_3px_6px_rgba(58,42,28,0.15)] transition-[background-color] hover:bg-white/40"
+              className="rounded-2xl border border-line bg-white/40 shadow-[2px_3px_6px_rgba(58,42,28,0.15)] transition-[background-color,box-shadow,translate] duration-200 ease-out hover:-translate-y-1 hover:bg-white/60 hover:shadow-[3px_9px_12px_rgba(58,42,28,0.26)]"
             />
           ))}
         </div>
