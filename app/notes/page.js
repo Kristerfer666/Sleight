@@ -24,8 +24,8 @@ export default function Notes() {
               onClick={() => setSelectedNote(n)}
               className={`mx-2 mb-2 first:mt-2 block h-1/5 w-[calc(100%-16px)] shrink-0 rounded-xl border transition-[background-color,box-shadow] ${
                 selectedNote === n
-                  ? "border-transparent bg-[#d3c6a4] shadow-[inset_3px_4px_10px_rgba(58,42,28,0.3),inset_0_3px_6px_rgba(58,42,28,0.1),inset_3px_0_6px_rgba(58,42,28,0.1),1px_1px_0_rgba(255,255,255,0.7)]"
-                  : "border-line bg-white/40 shadow-[2px_3px_6px_rgba(58,42,28,0.15)] hover:bg-white/75"
+                  ? "border-transparent bg-[#d3c6a4] hover:bg-[#e2d8bd] shadow-[inset_3px_4px_10px_rgba(58,42,28,0.3),inset_0_3px_6px_rgba(58,42,28,0.1),inset_3px_0_6px_rgba(58,42,28,0.1),1px_1px_0_rgba(255,255,255,0.7)]"
+                  : "border-line bg-white/60 shadow-[2px_3px_6px_rgba(58,42,28,0.15)] hover:bg-white/40"
               }`}
             />
           ))}
