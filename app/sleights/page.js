@@ -6,7 +6,7 @@ export default function Sleights() {
   const [sidebarOpen, setSidebarOpen] = useState(true);
 
   return (
-    <main className="relative flex p-4 h-[calc(100dvh-49px)] overflow-hidden bg-background text-foreground">
+    <main className="relative flex px-4 h-[calc(100dvh-49px)] overflow-hidden bg-background text-foreground">
       <aside
         inert={!sidebarOpen}
         className={`absolute top-4 bottom-4 left-4 w-[calc((100%-48px)/5)] rounded-2xl bg-linear-to-br from-[#ddd0b0] to-[#ebe1c7] shadow-[inset_4px_6px_14px_rgba(58,42,28,0.2),inset_0_4px_8px_rgba(58,42,28,0.07),inset_4px_0_8px_rgba(58,42,28,0.07),1px_1px_0_rgba(255,255,255,0.7)] transition-transform duration-500 ease-in-out motion-reduce:transition-none ${
@@ -18,7 +18,7 @@ export default function Sleights() {
           sidebarOpen ? "ml-[calc((100%-16px)/5+16px)]" : "ml-0"
         }`}
       >
-        <div className="grid h-full grid-cols-3 auto-rows-[calc((100%-40px)/3.5)] content-start gap-4 overflow-y-auto p-2 [scrollbar-width:thin] [scrollbar-color:#b9a982_transparent]">
+        <div className="grid h-full grid-cols-3 auto-rows-[calc((100%-24px)/3.5)] content-start gap-4 overflow-y-auto px-2 py-6 [scrollbar-width:thin] [scrollbar-color:#b9a982_transparent]">
           {Array.from({ length: 30 }, (_, i) => i + 1).map((n) => (
             <button
               key={n}
