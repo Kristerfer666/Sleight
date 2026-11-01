@@ -1,5 +1,7 @@
 import { Crimson_Pro, Geist_Mono } from "next/font/google";
 import Link from "next/link";
+import { cookies } from "next/headers";
+import { SIDEBAR_COOKIE } from "./lib/sidebarState";
 import "./globals.css";
 
 const crimsonPro = Crimson_Pro({
@@ -17,10 +19,14 @@ export const metadata = {
   description: "A learning platform for card and coin magic",
 };
 
-export default function RootLayout({ children }) {
+export default async function RootLayout({ children }) {
+  const sidebarClosed =
+    (await cookies()).get(SIDEBAR_COOKIE)?.value === "closed";
+
   return (
     <html
       lang="en"
+      data-sidebar={sidebarClosed ? "closed" : "open"}
       className={`${crimsonPro.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">

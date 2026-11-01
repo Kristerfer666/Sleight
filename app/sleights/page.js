@@ -1,24 +1,21 @@
 "use client";
 
-import { useState } from "react";
+import useSidebar from "../lib/useSidebar";
 
 export default function Sleights() {
-  const [sidebarOpen, setSidebarOpen] = useState(true);
+  const [sidebarOpen, toggleSidebar] = useSidebar();
 
   return (
     <main className="relative flex px-4 h-[calc(100dvh-49px)] overflow-hidden bg-background text-foreground">
       <aside
         inert={!sidebarOpen}
-        className={`absolute top-4 bottom-4 left-4 w-[calc((100%-48px)/5)] rounded-2xl bg-linear-to-br from-[#ddd0b0] to-[#ebe1c7] shadow-[inset_4px_6px_14px_rgba(58,42,28,0.2),inset_0_4px_8px_rgba(58,42,28,0.07),inset_4px_0_8px_rgba(58,42,28,0.07),1px_1px_0_rgba(255,255,255,0.7)] transition-transform duration-500 ease-in-out motion-reduce:transition-none ${
-          sidebarOpen ? "translate-x-0" : "-translate-x-[calc(100%+16px)]"
-        }`}
+        className={`absolute top-4 bottom-4 left-4 w-[calc((100%-48px)/5)] rounded-2xl bg-linear-to-br from-[#ddd0b0] to-[#ebe1c7] shadow-[inset_4px_6px_14px_rgba(58,42,28,0.2),inset_0_4px_8px_rgba(58,42,28,0.07),inset_4px_0_8px_rgba(58,42,28,0.07),1px_1px_0_rgba(255,255,255,0.7)] transition-transform duration-500 ease-in-out motion-reduce:transition-none translate-x-0 [[data-sidebar=closed]_&]:-translate-x-[calc(100%+16px)]`}
       ></aside>
       <section
-        className={`flex-1 min-w-0 transition-[margin-left] duration-500 ease-in-out motion-reduce:transition-none ${
-          sidebarOpen ? "ml-[calc((100%-16px)/5+16px)]" : "ml-0"
-        }`}
+        className={`flex-1 min-w-0 transition-[margin-left] duration-500 ease-in-out motion-reduce:transition-none ml-[calc((100%-16px)/5+16px)] [[data-sidebar=closed]_&]:ml-0`}
       >
         <div className="grid h-full grid-cols-3 auto-rows-[calc((100%-24px)/3.5)] content-start gap-4 overflow-y-auto px-2 py-6 [scrollbar-width:thin] [scrollbar-color:#b9a982_transparent]">
+          <div className="col-span-3" />
           {Array.from({ length: 30 }, (_, i) => i + 1).map((n) => (
             <button
               key={n}
@@ -31,7 +28,7 @@ export default function Sleights() {
       </section>
       <button
         type="button"
-        onClick={() => setSidebarOpen((open) => !open)}
+        onClick={toggleSidebar}
         aria-label={sidebarOpen ? "Close sidebar" : "Open sidebar"}
         aria-expanded={sidebarOpen}
         className="absolute top-6 left-6 z-10 flex h-8 w-8 items-center justify-center rounded-xl border border-line bg-white/40 text-muted transition-colors hover:bg-white/70 hover:text-foreground"
